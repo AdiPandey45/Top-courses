@@ -1,50 +1,40 @@
-import logo from './logo.svg';
+
+import { apiUrl,filterData } from './components/data';
 import './App.css';
 import { useEffect, useState } from 'react';
+import Navbar from './components/Navbar'
+import Cards from './components/Cards'
+import Filter from './components/Filter';
+import { toast } from 'react-toastify';
 
 function App() {
-const[text,setText]=useState('');
 
+  const [courses,setCourses]=useState('')
 
-//variation-1 = rendered again and again as you make chnages to the component
-// useEffect( ()=>{
-//   console.log("ui rendering done");
-// });
+  useEffect(()=>{
+    const fetchData=async ()=>{
+      try{
+        const res=await fetch(apiUrl);
+        const output=await res.json();
+        console.log(output);
+        setCourses(output.data);
 
-// // //variation-2 = rendered only once
-// // useEffect ( ()=>{
-// //   console.log("ab text bhi print hoga");
-// // },[]);
+      }
 
-
-const changeHandler = (event) => {
-  console.log(event.target.value);
-  setText(event.target.value); 
-};
-
-//variation-3 = rendered or console the part only when you are dealing with the specific part of the component
-// useEffect(()=>{
-//   console.log("rishta pakka");
-// },[text]);
-
-
-//variation-4
-
-useEffect(()=>{
-  //add event listener
-  console.log("listener added");
-
-  return ()=>{
-    console.log("listner removed");
-  }
-},[text]);
- 
-
+      catch{
+        toast.error("Something went wrong");
+      }
+    }
+    fetchData();
+  },[])
 
   return ( 
-    <div className="App">
-     <input type="text" onChange={changeHandler}></input>
-    </div>
+  <div>
+    <Navbar/>
+
+    <Filter filterdata={filterData}/>
+ <Cards courses={courses}/>
+  </div>
   );
 }
 
