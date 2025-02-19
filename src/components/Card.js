@@ -8,7 +8,7 @@ const clickHandler=()=>{
         setLikedCourses((liked) => 
             liked.filter((cid)=> (cid != course.id))
         );
-        toast.warning("Like Removed"); 
+        toast.warning("Like Removed");  
     }
 
     else{
