@@ -13,8 +13,7 @@ const clickHandler=()=>{
 
     else{
         if(likedCourse.length===0){ 
-            setLikedCourses([course.id]);
-        }
+            setLikedCourses([course.id]); 
         else{
             setLikedCourses((prev)=> [...prev,course.id]);
         }
