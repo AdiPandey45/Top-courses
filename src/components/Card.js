@@ -2,7 +2,7 @@ import {FcLike, FcLikePlaceholder,FcLikePlaceholderclassName} from "react-icons/
 import {toast} from 'react-toastify'
 
 const Card=({course,likedCourse,setLikedCourses})=>{
-    
+     
 const clickHandler=()=>{
     if(likedCourse.includes(course.id)){
         setLikedCourses((liked) =>
