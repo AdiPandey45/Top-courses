@@ -12,7 +12,7 @@ const clickHandler=()=>{
     } 
 
     else{
-        if(likedCourse.length===0){
+        if(likedCourse.length===0){ 
             setLikedCourses([course.id]);
         }
         else{
