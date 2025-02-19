@@ -1,4 +1,4 @@
-import {FcLike, FcLikePlaceholder,FcLikePlaceholderclassName} from "react-icons/fc"
+ import {FcLike, FcLikePlaceholder,FcLikePlaceholderclassName} from "react-icons/fc"
 import {toast} from 'react-toastify'
 
 const Card=({course,likedCourse,setLikedCourses})=>{
