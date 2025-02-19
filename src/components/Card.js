@@ -9,7 +9,7 @@ const clickHandler=()=>{
             liked.filter((cid)=> (cid != course.id)) 
         );
         toast.warning("Like Removed");  
-    }  
+    }   
 
     else{
         if(likedCourse.length===0){ 
