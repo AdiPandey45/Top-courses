@@ -1,5 +1,5 @@
  import {FcLike, FcLikePlaceholder,FcLikePlaceholderclassName} from "react-icons/fc"
-import {toast} from 'react-toastify'
+ import {toast} from 'react-toastify'
  
      
 const clickHandler=()=>{
