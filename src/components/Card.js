@@ -6,7 +6,7 @@ const Card=({course,likedCourse,setLikedCourses})=>{
 const clickHandler=()=>{
     if(likedCourse.includes(course.id)){
         setLikedCourses((liked) => 
-            liked.filter((cid)=> (cid != course.id))
+            liked.filter((cid)=> (cid != course.id)) 
         );
         toast.warning("Like Removed");  
     }  
