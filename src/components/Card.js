@@ -10,7 +10,7 @@ const clickHandler=()=>{
         ); 
         toast.warning("Like Removed");  
     }   
-
+ 
     else{
         if(likedCourse.length===0){ 
             setLikedCourses([course.id]); 
