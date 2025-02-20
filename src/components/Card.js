@@ -1,18 +1,20 @@
- import {FcLike, FcLikePlaceholder,FcLikePlaceholderclassName} from "react-icons/fc"
- import {toast} from 'react-toastify'
- 
-     
+import {FcLike, FcLikePlaceholder,FcLikePlaceholderclassName} from "react-icons/fc"
+import {toast} from 'react-toastify'
+
+const Card=({course,likedCourse,setLikedCourses})=>{
+    
 const clickHandler=()=>{
     if(likedCourse.includes(course.id)){
-        setLikedCourses((liked) =>  
-            liked.filter((cid)=> (cid != course.id))  
-        );  
-        toast.warning("Like Removed");  
-    }    
- 
+        setLikedCourses((liked) =>
+            liked.filter((cid)=> (cid != course.id))
+        );
+        toast.warning("Like Removed");
+    }
+
     else{
-        if(likedCourse.length===0){ 
-            setLikedCourses([course.id]); 
+        if(likedCourse.length===0){
+            setLikedCourses([course.id]);
+        }
         else{
             setLikedCourses((prev)=> [...prev,course.id]);
         }
@@ -30,6 +32,7 @@ return(
                    {
                     likedCourse.includes(course.id) ? (<FcLike fontSize="1.7rem"/>) : 
                     (<FcLikePlaceholder fontSize="1.7rem"/>)
+                    
                 }
 
                 </button>
